@@ -67,3 +67,13 @@ FROM department_name
 
 SELECT *
 FROM dept_managers
+
+-- Outputs:
+--1. list employee number, last name, first name, sex, and salary.
+SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
+FROM employee_info e
+LEFT JOIN salary s
+ON e.emp_no = s.emp_no;
+
+
+
