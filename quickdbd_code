@@ -1,18 +1,18 @@
-Quick DBD code:
+#Quick DBD code
 Job_Title
 -
-job_title_name VARCHAR(30)
-job_title_id VARCHAR(30)
+title_name VARCHAR(30)
+title_id VARCHAR(30)
 
 Salary
 -
-employee_id INT FK >- Employee_Info.employee_id
+emp_no INT FK >- Employee_Info.emp_no
 salary INT
 
 Employee_Info
 -
-employee_id INT PK
-job_title_id VARCHAR(30) PK FK >- Job_Title.job_title_id
+emp_no INT PK
+title_id VARCHAR(30)  FK >- Job_Title.title_id
 birthdate date
 first_name VARCHAR(30)
 last_name VARCHAR(30)
@@ -21,10 +21,15 @@ hire_date date
 
 Dept_Managers
 -
-department_id VARCHAR(30)
-employee_id INT FK >- Employee_Info.employee_id
+dept_no VARCHAR(30)
+emp_no INT FK >- Employee_Info.emp_no
 
 Department
 -
-department_id VARCHAR(30) PK FK >- Dept_Managers.department_id
+dept_no VARCHAR(30) PK FK >- Dept_Managers.dept_no
 department_name VARCHAR(255)
+
+Employee_Dept
+-
+emp_no INT FK >- Employee_Info.emp_no
+dept_no VARCHAR(30) FK >- Department.dept_no
